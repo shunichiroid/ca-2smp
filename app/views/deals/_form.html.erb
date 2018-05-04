@@ -1,0 +1,62 @@
+<%= form_with(model: deal, local: true) do |form| %>
+  <% if deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+      <% deal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :deal_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :deal_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_data %>
+    <%= form.text_area :image_data, id: :deal_image_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :original_price %>
+    <%= form.text_field :original_price, id: :deal_original_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :offer_price %>
+    <%= form.text_field :offer_price, id: :deal_offer_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiry %>
+    <%= form.datetime_select :expiry, id: :deal_expiry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :deal_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :voucher_limit_per_user %>
+    <%= form.number_field :voucher_limit_per_user, id: :deal_voucher_limit_per_user %>
+  </div>
+
+  <div class="field">
+    <%= form.label :charge_id %>
+    <%= form.text_field :charge_id, id: :deal_charge_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

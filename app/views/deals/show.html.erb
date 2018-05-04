@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @deal.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @deal.description %>
+</p>
+
+<p>
+  <strong>Image data:</strong>
+  <%= @deal.image_data %>
+</p>
+
+<p>
+  <strong>Original price:</strong>
+  <%= @deal.original_price %>
+</p>
+
+<p>
+  <strong>Offer price:</strong>
+  <%= @deal.offer_price %>
+</p>
+
+<p>
+  <strong>Expiry:</strong>
+  <%= @deal.expiry %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @deal.quantity %>
+</p>
+
+<p>
+  <strong>Voucher limit per user:</strong>
+  <%= @deal.voucher_limit_per_user %>
+</p>
+
+<p>
+  <strong>Charge:</strong>
+  <%= @deal.charge_id %>
+</p>
+
+<%= link_to 'Edit', edit_deal_path(@deal) %> |
+<%= link_to 'Back', deals_path %>
