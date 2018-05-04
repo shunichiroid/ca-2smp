@@ -1,0 +1,72 @@
+<%= form_with(model: merchant, local: true) do |form| %>
+  <% if merchant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(merchant.errors.count, "error") %> prohibited this merchant from being saved:</h2>
+
+      <ul>
+      <% merchant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id_id %>
+    <%= form.text_field :user_id_id, id: :merchant_user_id_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :merchant_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :merchant_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street, id: :merchant_street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :merchant_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :merchant_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode, id: :merchant_postcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :merchant_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :merchant_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website_url %>
+    <%= form.text_field :website_url, id: :merchant_website_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook_id %>
+    <%= form.text_field :facebook_id, id: :merchant_facebook_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

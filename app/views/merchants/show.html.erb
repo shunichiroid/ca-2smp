@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @merchant.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @merchant.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @merchant.description %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @merchant.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @merchant.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @merchant.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @merchant.postcode %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @merchant.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @merchant.longitude %>
+</p>
+
+<p>
+  <strong>Website url:</strong>
+  <%= @merchant.website_url %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @merchant.facebook_id %>
+</p>
+
+<%= link_to 'Edit', edit_merchant_path(@merchant) %> |
+<%= link_to 'Back', merchants_path %>
