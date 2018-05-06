@@ -6,14 +6,9 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th>Image data</th>
       <th>Original price</th>
       <th>Offer price</th>
-      <th>Expiry</th>
-      <th>Quantity</th>
-      <th>Voucher limit per user</th>
-      <th>Charge</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,15 +17,10 @@
     <% @deals.each do |deal| %>
       <tr>
         <td><%= deal.title %></td>
-        <td><%= deal.description %></td>
         <td><%= deal.image_data %></td>
         <td><%= deal.original_price %></td>
         <td><%= deal.offer_price %></td>
-        <td><%= deal.expiry %></td>
-        <td><%= deal.quantity %></td>
-        <td><%= deal.voucher_limit_per_user %></td>
-        <td><%= deal.charge_id %></td>
-        <td><%= link_to 'Show', deal %></td>
+        <td><%= link_to 'VIEW', deal %></td>
         <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
         <td><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
