@@ -14,6 +14,24 @@ One of the most common difficulty for restaurants is to obtain stable number of 
 ### Solution
 Discount voucher is a good tool to stimulate customers to visit the restaurant. Furthermore, if restaurant owners can provide it to customers anytime they want by  online, this enable them to attract customers urgently in above situation. 
 
+## Design Process
+### References/Tool
+#### Inspitation
+[pixabay](https://pixabay.com/) <br/>
+[Unsplash](https://unsplash.com/)
+
+#### Color
+http://paletton.com/ <br/>
+https://www.rgbtohex.net/ <br/>
+Digital Color Meter (Mac)
+
+#### Font
+https://fonts.google.com/
+
+#### Others
+[Icon8](https://icons8.com/)
+
+
 
 ## Planning
 
