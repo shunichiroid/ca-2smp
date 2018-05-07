@@ -40,6 +40,14 @@
     <%= form.label :image %>
     <%= form.file_field :image, id: :merchant_image_data %>
   </div>
+  <% if merchant.image_data? %>
+    <div class="field">
+      <%= image_tag merchant.image_url(:thumb) %>
+    </div>
+    <div class="field">
+      Remove attachment: <%= form.check_box :remove_image %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.label :website_url %>

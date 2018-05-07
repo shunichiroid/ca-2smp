@@ -25,7 +25,7 @@ class MerchantsController < ApplicationController
   # POST /merchants.json
   def create
     @merchant = Merchant.new(merchant_params)
-
+    @merchant.user = current_user
     respond_to do |format|
       if @merchant.save
         format.html { redirect_to @merchant, notice: 'Merchant was successfully created.' }
@@ -69,6 +69,6 @@ class MerchantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def merchant_params
-      params.require(:merchant).permit(:user_id, :name, :description, :image, :street, :city, :state, :postcode, :latitude, :longitude, :website_url, :facebook_id)
+      params.require(:merchant).permit(:user_id, :name, :description, :image, :remove_image, :street, :city, :state, :postcode, :latitude, :longitude, :website_url, :facebook_id)
     end
 end
