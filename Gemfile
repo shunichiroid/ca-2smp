@@ -12,6 +12,7 @@ gem "image_processing", "~> 1.0"
 gem 'aws-sdk', '~> 3'
 gem 'fastimage'
 gem 'mini_magick', '~> 4.8'
+gem 'pundit', '~> 1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
