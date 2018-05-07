@@ -16,8 +16,9 @@
   <tbody>
     <% @deals.each do |deal| %>
       <tr>
+        <td><%= image_tag deal.image_url(:thumb) unless deal.image.blank?%></td>
         <td><%= deal.title %></td>
-        <td><%= deal.image_data %></td>
+        <td><%= deal.merchant.full_address %></td>
         <td><%= deal.original_price %></td>
         <td><%= deal.offer_price %></td>
         <td><%= link_to 'VIEW', deal %></td>

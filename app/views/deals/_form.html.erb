@@ -22,9 +22,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :image_data %>
-    <%= form.text_area :image_data, id: :deal_image_data %>
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :deal_image_data %>
   </div>
+  </div>
+  <% if deal.image_data? %>
+    <div class="field">
+      <%= image_tag deal.image_url(:thumb) %>
+    </div>
+    <div class="field">
+      Remove attachment: <%= form.check_box :remove_image %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.label :original_price %>
@@ -49,11 +58,6 @@
   <div class="field">
     <%= form.label :voucher_limit_per_user %>
     <%= form.number_field :voucher_limit_per_user, id: :deal_voucher_limit_per_user %>
-  </div>
-
-  <div class="field">
-    <%= form.label :charge_id %>
-    <%= form.text_field :charge_id, id: :deal_charge_id %>
   </div>
 
   <div class="actions">
