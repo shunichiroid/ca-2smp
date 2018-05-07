@@ -12,18 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id_id %>
-    <%= form.text_field :user_id_id, id: :merchant_user_id_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :merchant_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :merchant_description %>
   </div>
 
   <div class="field">
@@ -42,18 +32,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :postcode %>
-    <%= form.text_field :postcode, id: :merchant_postcode %>
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :merchant_description %>
   </div>
 
   <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, id: :merchant_latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: :merchant_longitude %>
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :merchant_image_data %>
   </div>
 
   <div class="field">
