@@ -11,7 +11,8 @@
   <main>
     <header>
       <%= link_to 'Home', root_path %>
-      <%= link_to 'Sign in?', new_user_session_path %>
+      <%= render '/partial/login_items' %>
+      <%= render '/partial/merchant_login_item' %>
     </header>
     <body>
       <%= yield %>
