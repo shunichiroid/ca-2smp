@@ -5,6 +5,7 @@ class MerchantsController < ApplicationController
   # GET /merchants.json
   def index
     @merchants = Merchant.all
+    authorize @merchants
   end
 
   # GET /merchants/1
@@ -15,6 +16,7 @@ class MerchantsController < ApplicationController
   # GET /merchants/new
   def new
     @merchant = Merchant.new
+    authorize @merchant
   end
 
   # GET /merchants/1/edit
@@ -26,6 +28,8 @@ class MerchantsController < ApplicationController
   def create
     @merchant = Merchant.new(merchant_params)
     @merchant.user = current_user
+    authorize @merchant
+
     respond_to do |format|
       if @merchant.save
         format.html { redirect_to @merchant, notice: 'Merchant was successfully created.' }
@@ -65,6 +69,7 @@ class MerchantsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_merchant
       @merchant = Merchant.find(params[:id])
+      authorize @merchant
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
