@@ -5,6 +5,7 @@ class DealsController < ApplicationController
   # GET /deals.json
   def index
     @deals = Deal.all
+    authorize @deals
   end
 
   # GET /deals/1
@@ -15,6 +16,7 @@ class DealsController < ApplicationController
   # GET /deals/new
   def new
     @deal = Deal.new
+    authorize @dea, current_user
   end
 
   # GET /deals/1/edit
@@ -26,6 +28,8 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new(deal_params)
     @deal.merchant = Merchant.find(current_user.id)
+    authorize @deal
+
     respond_to do |format|
       if @deal.save
         format.html { redirect_to @deal, notice: 'Deal was successfully created.' }
@@ -65,6 +69,7 @@ class DealsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_deal
       @deal = Deal.find(params[:id])
+      authorize @deal
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
