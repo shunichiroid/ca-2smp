@@ -12,7 +12,7 @@
     <header>
       <%= link_to 'Home', root_path %>
       <%= render '/partial/login_items' %>
-      <%= link_to 'Merchant', merchants_path %> 
+      <%= link_to 'Merchant page', merchants_path if user_signed_in? %>
 
 
     </header>

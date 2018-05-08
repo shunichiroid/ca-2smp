@@ -22,13 +22,7 @@
         <td><%= deal.original_price %></td>
         <td><%= deal.offer_price %></td>
         <td><%= link_to 'VIEW', deal %></td>
-        <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
-        <td><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Deal', new_deal_path %>

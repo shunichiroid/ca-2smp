@@ -16,7 +16,7 @@ class DealsController < ApplicationController
   # GET /deals/new
   def new
     @deal = Deal.new
-    authorize @dea, current_user
+    authorize @deal
   end
 
   # GET /deals/1/edit
@@ -29,7 +29,6 @@ class DealsController < ApplicationController
     @deal = Deal.new(deal_params)
     @deal.merchant = Merchant.find(current_user.id)
     authorize @deal
-
     respond_to do |format|
       if @deal.save
         format.html { redirect_to @deal, notice: 'Deal was successfully created.' }

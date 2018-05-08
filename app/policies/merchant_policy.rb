@@ -14,7 +14,7 @@ class MerchantPolicy < ApplicationPolicy
     def destroy?
       return true if user.present? && user == merchant.user
     end
-   
+
     private
    
     def merchant

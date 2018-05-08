@@ -6,6 +6,7 @@ class MerchantsController < ApplicationController
   def index
     @merchants = Merchant.all
     authorize @merchants
+    @merchants = policy_scope(Merchant)
   end
 
   # GET /merchants/1
@@ -75,5 +76,9 @@ class MerchantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def merchant_params
       params.require(:merchant).permit(:user_id, :name, :description, :image, :remove_image, :street, :city, :state, :postcode, :latitude, :longitude, :website_url, :facebook_id)
+    end
+
+    def authorize_merchant
+      authorize policy_scope(Merchant)
     end
 end
