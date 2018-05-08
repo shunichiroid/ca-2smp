@@ -4,8 +4,13 @@ class DealsController < ApplicationController
   # GET /deals
   # GET /deals.json
   def index
-    @deals = Deal.all
-    authorize @deals
+    unless params[:deals].present?
+      @deals = Deal.all
+      authorize @deals
+    else
+      deal_description = params[:deals][:search]
+      @deals = Deal.search_by_name(deal_description)
+    end
   end
 
   # GET /deals/1

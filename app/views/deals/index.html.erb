@@ -2,6 +2,12 @@
 
 <h1>Deals</h1>
 
+<%= form_with scope: :deals, method: :get, local: true do |f| %>
+  <%= f.label :filter_by_keyword  %>
+  <%= f.text_field :search  %>
+  <%= f.submit :filter  %>
+<% end %>
+
 <table>
   <thead>
     <tr>
