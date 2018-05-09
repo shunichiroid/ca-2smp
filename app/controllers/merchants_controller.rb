@@ -35,6 +35,8 @@ class MerchantsController < ApplicationController
       if @merchant.save
         format.html { redirect_to @merchant, notice: 'Merchant was successfully created.' }
         format.json { render :show, status: :created, location: @merchant }
+        redirect_to new_charge_path
+        return
       else
         format.html { render :new }
         format.json { render json: @merchant.errors, status: :unprocessable_entity }

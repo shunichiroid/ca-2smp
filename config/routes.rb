@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :charges
+
 
 
   # get "/vouchers/:id", to: "vouchers#show", as: 'voucher'
