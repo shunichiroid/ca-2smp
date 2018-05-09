@@ -72,7 +72,7 @@ class DealsController < ApplicationController
     # redirect_to root_path
 
     if @voucher.save
-      VoucherMailer.deal_mail(@voucher).deliver_now
+      VoucherMailer.voucher_mail(@voucher).deliver_now
       # format.html{ redirect_to @voucher }
       redirect_to root_path
     end
