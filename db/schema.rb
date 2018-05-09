@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180506233340) do
+ActiveRecord::Schema.define(version: 20180509001734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,20 @@ ActiveRecord::Schema.define(version: 20180506233340) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vouchers", force: :cascade do |t|
+    t.bigint "deal_id"
+    t.bigint "user_id"
+    t.text "image_data"
+    t.string "uuid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deal_id"], name: "index_vouchers_on_deal_id"
+    t.index ["user_id"], name: "index_vouchers_on_user_id"
+  end
+
   add_foreign_key "deals", "merchants"
   add_foreign_key "merchants", "users"
   add_foreign_key "photos", "merchants"
+  add_foreign_key "vouchers", "deals"
+  add_foreign_key "vouchers", "users"
 end

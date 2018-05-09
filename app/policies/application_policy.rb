@@ -27,6 +27,10 @@ class ApplicationPolicy
     false
   end
 
+  def vouchers?
+    true
+  end
+
   def edit?
     update?
   end

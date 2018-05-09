@@ -8,7 +8,16 @@ class ApplicationController < ActionController::Base
 
     #devise
     before_action :store_user_location!, if: :storable_location?
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:home, :index, :show]
+
+    # def create
+    #     @user = User.new(user_params)
+
+    #     if @user.save
+    #         ModelMailer.voucher_mail(@user).deliver_now
+    #         format.html{ redirect_to @user}
+    #     end
+    # end
 
     # def after_sign_in_path_for(resource)
     #     current_user_path

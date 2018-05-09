@@ -1,0 +1,27 @@
+<h1>Your Vouchers</h1>
+
+<h3>Valid Vouchers</h3>
+<ul>
+<% @vouchers.each do |voucher| %>
+
+    <li>
+    <%= voucher.id %>
+    <%= voucher.title %>
+    <%= link_to 'Details', deal_path(voucher) %>
+    </li>
+    
+<% end %>
+</ul>
+
+<h3>Expired Vouchers</h3>
+<ul>
+<% @expired_vouchers.each do |voucher| %>
+
+    <li>
+    <%= voucher.id %>
+    <%= voucher.title %>
+    <%= link_to 'Details', deal_path(voucher) %>
+    </li>
+
+<% end %>
+</ul>

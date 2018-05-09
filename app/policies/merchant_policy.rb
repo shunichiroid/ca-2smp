@@ -8,11 +8,11 @@ class MerchantPolicy < ApplicationPolicy
     end
    
     def update?
-      return true if user.present? && user == merchant.user
+      return user.present? && user == record.user
     end
    
     def destroy?
-      return true if user.present? && user == merchant.user
+      return user.present? && user == record.user
     end
 
     private

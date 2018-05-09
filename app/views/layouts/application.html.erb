@@ -9,17 +9,20 @@
   </head>
 
   <main>
-    <header>
-      <%= link_to 'Home', root_path %>
-      <%= render '/partial/login_items' %>
-      <%= link_to 'Merchant page', merchants_path if user_signed_in? %>
-
-
+    <header class="header">
+        <nav>
+        <%= link_to 'Home', root_path %>
+        <div class="header-right">
+          <%= render '/partial/login_items' %>
+        </div>
+        </nav>
     </header>
     <body>
       <%= yield %>
     </body>
-    <footer></footer>
+    <footer>
+      <div class="footer-container"></div>
+    </footer>
   </main>
   
 </html>

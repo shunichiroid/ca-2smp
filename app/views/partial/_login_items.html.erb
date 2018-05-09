@@ -1,4 +1,6 @@
 <% if user_signed_in? %>
+  <%= link_to 'Your Vouchers', vouchers_path unless current_user.vouchers.nil? %>
+  <%= link_to 'Merchant page', merchants_path %>
   <%= link_to('Logout?', destroy_user_session_path, method: :delete) %>        
 <% else %>
   <%= link_to('Merchant?', new_user_session_path)  %>  

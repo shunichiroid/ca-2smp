@@ -1,5 +1,5 @@
 class DealsController < ApplicationController
-  before_action :set_deal, only: [:show, :edit, :update, :destroy]
+  before_action :set_deal, only: [:show, :edit, :update, :destroy, :apply]
   
   # GET /deals
   # GET /deals.json
@@ -56,6 +56,25 @@ class DealsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @deal.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def apply
+    flash[:notice] = "You applied for the deal!"
+    # create a voucher using the Voucher model (Voucher.new)
+    @voucher = Voucher.new
+    # Voucher is for Voucher.deal =  @deal
+    @voucher.deal = @deal
+    # Voucher is for User Voucher.user = current_user
+    @voucher.user = current_user
+    # Save the new Voucher
+    @voucher.save
+    # redirect_to root_path
+
+    if @voucher.save
+      VoucherMailer.deal_mail(@voucher).deliver_now
+      # format.html{ redirect_to @voucher }
+      redirect_to root_path
     end
   end
 

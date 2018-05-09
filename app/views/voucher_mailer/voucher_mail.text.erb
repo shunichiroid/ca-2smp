@@ -1,0 +1,21 @@
+Thank you!
+
+Hi there <%= @voucher.user.email %>
+
+We have sent you a discount voucher to use at <%= @voucher.deal.title %>. 
+Below are the voucher details. Please show them the QR code and you can get discount!
+
+
+Title:
+<%= @voucher.deal.title %>
+Address:
+<%= @voucher.deal.merchant.full_address %>
+Voucher price:
+<%= @voucher.deal.offer_price %>
+Expiry:
+<%= @voucher.deal.expiry %>
+</div>
+
+Enjoy!
+
+Nowcher team
