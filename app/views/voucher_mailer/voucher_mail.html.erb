@@ -16,7 +16,11 @@ Below are the voucher details. Please show them the QR code and you can get disc
     <p><%= @voucher.deal.offer_price %></p>
     <strong>Expiry:</strong>
     <p><%= @voucher.deal.expiry %></p>
+    <strong>QRcode:</strong>
+    <%= image_tag @voucher.qrcode_url %>
 </div>
+<br>
+<br>
 
 Enjoy!
 

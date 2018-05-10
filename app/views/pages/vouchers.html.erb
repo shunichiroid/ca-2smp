@@ -20,8 +20,6 @@
 
     <li>
     <%= voucher.title %>
-    <%= image_tag voucher.qrcode_url unless voucher.qrcode_data.nil? %>
-
     <%= link_to 'Details', deal_path(voucher) %>
     </li>
 
