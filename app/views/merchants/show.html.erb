@@ -1,44 +1,58 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Create a new deal', new_deal_path(@merchant) if current_user == @merchant.user %>
+<div class= "container-headline">
+  <%= link_to 'Create a new deal', new_deal_path(@merchant) if current_user == @merchant.user %>
+</div>
 
-<p>
-  <%= image_tag @merchant.image_url(:thumb) unless @merchant.image.blank?%>
-</p>
+<div class= "container-body">
+  <p>
+    <%= image_tag @merchant.image_url(:thumb) unless @merchant.image.blank?%>
+  </p>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @merchant.name %>
-</p>
+<div class= "container-body">
+  <p>
+    <strong>Name:</strong>
+    <%= @merchant.name %>
+  </p>
+</div>
 
-<p>
-  <strong>About:</strong>
-  <%= @merchant.description %>
-</p>
+<div class= "container-body">
+  <p>
+    <strong>About:</strong>
+    <%= @merchant.description %>
+  </p>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @merchant.full_address %>
-</p>
+<div class= "container-body">
+  <p>
+    <strong>Address:</strong>
+    <%= @merchant.full_address %>
+  </p>
+</div>
+<div class= "container-body">
+  <p>
+    <strong>Website url:</strong>
+    <%= @merchant.website_url %>
+  </p>
+</div>
 
-<p>
-  <strong>Website url:</strong>
-  <%= @merchant.website_url %>
-</p>
+<div class= "container-body">
+  <p>
+    <strong>Facebook:</strong>
+    <%= @merchant.facebook_id %>
+  </p>
+</div>
 
-<p>
-  <strong>Facebook:</strong>
-  <%= @merchant.facebook_id %>
-</p>
+<div class= "container-body">
+  <strong>All Deals:</strong>
+      <% @merchant.deals.each do |d|  %>
+        <ul>
+          <li><%= d.title %> <%= link_to 'View', deal_path(d) %></li>
+        </ul>
+      <% end %>
+</div>
 
-
-<strong>All Deals:</strong>
-    <% @merchant.deals.each do |d|  %>
-      <ul>
-        <li><%= d.title %> <%= link_to 'View', deal_path(d) %></li>
-      </ul>
-    <% end %>
-
-  
-
-<%= link_to 'Edit', edit_merchant_path(@merchant) if current_user == @merchant.user %>
+<div class= "container-body">
+  <%= link_to 'Edit', edit_merchant_path(@merchant) if current_user == @merchant.user %>
+</div>

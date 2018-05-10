@@ -1,61 +1,74 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Image data:</strong>
-  <%= image_tag @deal.image_url(:thumb) unless @deal.image.blank?%>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @deal.title %>
-</p>
+<div class="container-body">
+  <p>
+    <%= image_tag @deal.image_url(:thumb) unless @deal.image.blank?%>
+  </p>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @deal.merchant.full_address %>
-</p>
+<div class="container-body">
+  <p>
+    <strong>Title:</strong>
+    <%= @deal.title %>
+  </p>
+</div>
 
-<p>
-  <strong>Original price:</strong>
-  <%= @deal.original_price %>
-</p>
+<div class="container-body">
+  <p>
+    <strong>Address:</strong>
+    <%= @deal.merchant.full_address %>
+  </p>
+</div>
 
-<p>
-  <strong>Offer price:</strong>
-  <%= @deal.offer_price %>
-</p>
+<div class="container-body">
+  <p>
+    <strong>Original price:</strong>
+    <%= @deal.original_price %>
+  </p>
+  <p>
+    <strong>Offer price:</strong>
+    <%= @deal.offer_price %>
+  </p>
+</div>
 
+<div class="container-body">
+  <p>
+    <strong>Shop:</strong>
+    <%= @deal.merchant.name %>
+    <%= link_to 'More info', merchant_path(@deal) %>
+  </p>
+</div>
 
-<p>
-  <strong>Shop:</strong>
-  <%= @deal.merchant.name %>
-  <%= link_to 'More info', merchant_path(@deal) %>
-</p>
+<div class="container-body">
+  <p>
+    <strong>Description:</strong>
+    <%= @deal.description %>
+  </p>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @deal.description %>
-</p>
+<div class="container-body">
+  <p>
+    <strong>Expiry:</strong>
+    <%= @deal.expiry %>
+  </p>
+</div>
 
+<div class="container-body">
+  <p>
+    <strong>Left:</strong>
+    <%= @deal.quantity %>
+  </p>
+</div>
 
+<div class="container-body">
+  <p>
+    <strong>Voucher limit per user:</strong>
+    <%= @deal.voucher_limit_per_user %>
+  </p>
+</div>
 
-<p>
-  <strong>Expiry:</strong>
-  <%= @deal.expiry %>
-</p>
-
-<p>
-  <strong>Left:</strong>
-  <%= @deal.quantity %>
-</p>
-
-<p>
-  <strong>Voucher limit per user:</strong>
-  <%= @deal.voucher_limit_per_user %>
-</p>
-
-<%= link_to 'GET', apply_deal_path(@deal), method: :post unless current_user == @deal.merchant.user %>
-<!-- <%= link_to 'Get Voucher', vouchers_path(@deal), method: :get %> -->
-
-
-<%= link_to 'Edit', edit_deal_path(@deal) if current_user == @deal.merchant.user %>
-<%= link_to 'Destroy', @deal, method: :delete, data: { confirm: 'Are you sure?' } if current_user == @deal.merchant.user %>
+<div class="container-body">
+  <%= link_to 'GET', apply_deal_path(@deal), method: :post unless current_user == @deal.merchant.user %>
+  <%= link_to 'Edit', edit_deal_path(@deal) if current_user == @deal.merchant.user %>
+  <%= link_to 'Destroy', @deal, method: :delete, data: { confirm: 'Are you sure?' } if current_user == @deal.merchant.user %>
+</div>

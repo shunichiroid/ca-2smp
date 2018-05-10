@@ -1,63 +1,101 @@
-// // Place all the styles related to the Deals controller here.
-// // They will automatically be included in application.css.
-// // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .filter_bar {
-//     align-items: center;
-// }
 
-.container {
-    width: 300px;
-    height: 200px;
+.container-filterbar{
+  display: flex;
+  justify-content: center;
 }
 
-// .deals-index-images {
-//     grid-column-start: 1;
-//     grid-column-end: 4;
-//     grid-row-start: 1;
-//     grid-row-end: 2;
-// }
+.container-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-// .title {
-//     grid-column-start: 1;
-//     grid-column-end: 4;
-//     grid-row-start: 3;
-//     grid-row-end: 4;
-// }
-
-// .address {
-//     grid-column-start: 1;
-//     grid-column-end: 4;
-//     grid-row-start: 4;
-//     grid-row-end: 5;
-// }
-
-
-// .original-price {
-//     grid-column-start: 3;
-//     grid-column-end: 4;
-//     grid-row-start: 3;
-//     grid-row-end: 4;
-// }
-
-// .offer-price {
-//     grid-column-start: 3;
-//     grid-column-end: 4;
-//     grid-row-start: 4;
-//     grid-row-end: 5;
-// }
-
-// .view {
-//     grid-column-start: 4;
-//     grid-column-end: 5;
-//     grid-row-start: 2;
-//     grid-row-end: 4;
-// }
+.image, .title, .address, .original-price, .offer-price {
+  border: 2px solid #DA904B;
+  background: #ffffff;
+}
+.element {
+  height: 300px;
+  width: 400px;
+  display: grid;
+  grid-template-columns: 200px 100px 50px;
+  grid-template-rows: 250px 30px 20px;
+  margin: 50px;
+}
 
 .image {
-  object-fit: cover;
-  max-width: 200px;
-  max-height: 200px;
-  background-color: #ccc;
-  border: 1px solid #ccc;
+  min-height: 50px;
+  min-width: 50px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
+
+.title {
+  font-size: 19px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.address {
+  font-family: 'Numans', sans-serif;
+  font-size: 13px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.original-price {
+  text-decoration: line-through;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.offer-price {
+  font-size: 18px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.view {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  background-color: #D55543;
+  border: none;
+  color: #F5CD73;
+  text-align: center;
+  line-height: 55px;
+  vertical-align: middle;
+  margin: 125px 25px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+input[type=text], input[type=file], input[type=area] {
+  border: 2px solid #DA904B;
+  border-radius: 4px;
+  width: 300px;
+  height: 25px;
+}
+
+.container-filterbar input[type=submit] {
+    background-color: #D55543;
+    border: none;
+    color: #F5CD73;
+    padding: 15px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+

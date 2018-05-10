@@ -25,33 +25,33 @@ body {
     width: auto;
     font-family: 'Days One', sans-serif;
 }
- 
+
 .header {
-    background-color: #DA904B;
-}
-
-
-.header nav {
-    /* float: left; */
+    height: 70px;
     width: 100%;
-    color: #F5CD73;
-    padding: 12px;
-    text-decoration: none;
+    background-color: #DA904B;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     font-size: 18px; 
     line-height: 25px;
-    border-radius: 4px;
 }
 
 .header-right {
-    /* float: right; */
-    /* justify-content: flex-end; */
-    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.header-left {
+    margin-left: 10px;
 }
 
 .content {
     flex-wrap: wrap;
     background-color: #F5CD73;
     flex: 1;
+    overflow: scroll;
+    height: 50vh;
+    justify-content: center;
 }
 
     
@@ -61,4 +61,27 @@ body {
     height: 42px;
     width: 100%;
     background-color: #DA904B;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-headline {
+    display: flex;
+    justify-content: center;
+}
+
+.container-body {
+    display: flex;
+    justify-content: center;
+}
+
+
+.find-voucher{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin: 50px;
 }

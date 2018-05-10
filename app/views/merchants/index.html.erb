@@ -1,27 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div class= "container-headline">
+  <h1>Merchants</h1>
+</div>
 
-<h1>Merchants</h1>
+<div class="container-body">
+  <table>
+    <tbody>
+      <% @merchants.each do |merchant| %>
+        <tr>
+          <td><%= merchant.name %></td>
+          <td><%= link_to 'Show', merchant %></td>
+          <td><%= link_to 'Edit', edit_merchant_path(merchant) %></td>
+          <td><%= link_to 'Delete', merchant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @merchants.each do |merchant| %>
-      <tr>
-      
-        <td><%= merchant.name %></td>
-        <td><%= link_to 'Show', merchant %></td>
-        <td><%= link_to 'Edit', edit_merchant_path(merchant) %></td>
-        <td><%= link_to 'Delete', merchant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Merchant', new_merchant_path %>
+<div class="container-body">
+  <%= link_to 'New Merchant', new_merchant_path %>
+</div>

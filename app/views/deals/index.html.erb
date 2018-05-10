@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Deals</h1>
+<div class= "container-headline">
+  <h1>Choose today's deal!</h1>
+</div>
 
-<div class="filterbar">
+<div class="container-filterbar">
   <%= form_with scope: :deals, method: :get, local: true do |f| %>
     <%= f.label :filter_by_keyword  %>
     <%= f.text_field :search  %>
@@ -10,32 +12,20 @@
   <% end %>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image data</th>
-      <th>Original price</th>
-      <th>Offer price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
 
-<% @deals.each do |deal| %>
-  <div class= "container">
-    <div class="deals-index-images">
+<div class= "container-main">
+  <% @deals.each do |deal| %>
+    <div class="element">
       <div class="image">
       <%= image_tag deal.image_url(:thumb) unless deal.image.blank? %>
       </div>
-   
       <div class="title"><%= deal.title %></div>
       <div class="address"><%= deal.merchant.full_address %></div>
-      <div class="original-price"><%= deal.original_price %></div>
-      <div class="offer-price"><%= deal.offer_price %></div>
+      <div class="original-price">$<%= deal.original_price %></div>
+      <div class="offer-price">$<%= deal.offer_price %></div>
       <div class="view"><%= link_to 'VIEW', deal %></div>
-
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
