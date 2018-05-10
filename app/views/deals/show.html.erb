@@ -69,6 +69,12 @@
 
 <div class="container-body">
   <%= link_to 'GET', apply_deal_path(@deal), method: :post unless current_user == @deal.merchant.user %>
+</div>
+
+<div class="container-body">
   <%= link_to 'Edit', edit_deal_path(@deal) if current_user == @deal.merchant.user %>
-  <%= link_to 'Destroy', @deal, method: :delete, data: { confirm: 'Are you sure?' } if current_user == @deal.merchant.user %>
+</div>
+
+<div class="container-body">
+  <%= link_to 'Destroy', @deal, method: :delete, data: { confirm: 'Are you sure?' } if current_user == @deal.merchant.user %><br>
 </div>

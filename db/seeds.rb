@@ -92,7 +92,7 @@ merchants = [{
     city: "Melbourne",
     state: "VIC",
     postcode: 0000,
-    user_id: 1
+    user_id: 2
 },
 {
     name: "Bob and Angie",
@@ -101,7 +101,7 @@ merchants = [{
     city: "Melbourne",
     state: "VIC",
     postcode: 0000,
-    user_id: 1
+    user_id: 3
 }
 ]
 
@@ -119,6 +119,6 @@ users = [{
 }
 ]
 
-User.create!(users) {|u| puts u.name}
+User.create!(users) {|u| puts u.email}
 Merchant.create!(merchants) {|m| puts m.name}
 Deal.create!(deals) {|d| puts d.title}

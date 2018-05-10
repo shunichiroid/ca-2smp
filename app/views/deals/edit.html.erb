@@ -1,6 +1,12 @@
-<h1>Editing Deal</h1>
+<div class= "container-headline">
+    <h1>Editing Deal</h1>
+</div>
 
 <%= render 'form', deal: @deal %>
+<div class= "container-body">
+<%= link_to 'Show', @deal %>
+</div>
 
-<%= link_to 'Show', @deal %> |
+<div class= "container-body">
 <%= link_to 'Back', deals_path %>
+</div>
