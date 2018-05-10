@@ -11,7 +11,8 @@ class Voucher < ApplicationRecord
   end
 
   def generate_qrcode
-    url = "http://localhost:3000/vouchers/verify/#{self.uuid}"
+    url = "https://nowcher.herokuapp.com/#{self.uuid}"
+    # url = "http://localhost:3000/vouchers/verify/#{self.uuid}"
     qr = RQRCode::QRCode.new(url)
     png = qr.as_png(
       resize_gte_to: false,
