@@ -1,11 +1,13 @@
 <h1>Your Vouchers</h1>
 
 <h3>Valid Vouchers</h3>
+
 <ul>
 <% @vouchers.each do |voucher| %>
 
     <li>
     <%= voucher.title %>
+    <%= image_tag voucher.qrcode_url unless voucher.qrcode_data.nil? %>
     <%= link_to 'Details', deal_path(voucher) %>
     </li>
     
@@ -18,6 +20,8 @@
 
     <li>
     <%= voucher.title %>
+    <%= image_tag voucher.qrcode_url unless voucher.qrcode_data.nil? %>
+
     <%= link_to 'Details', deal_path(voucher) %>
     </li>
 

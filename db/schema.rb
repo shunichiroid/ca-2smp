@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180509001734) do
+ActiveRecord::Schema.define(version: 20180510061524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20180509001734) do
   create_table "vouchers", force: :cascade do |t|
     t.bigint "deal_id"
     t.bigint "user_id"
-    t.text "image_data"
+    t.text "qrcode_data"
     t.string "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
