@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ca2smp</title>
+    <title>Nowcher</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Days+One" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <main>
+
+  <body>
     <header class="header">
         <nav>
-        <%= link_to 'Home', root_path %>
+        <div class="header-left">
+          <%= link_to image_tag('/assets/images/logo/logo.png'), root_path %>
+        </div>
+        
         <div class="header-right">
           <%= render '/partial/login_items' %>
         </div>
         </nav>
     </header>
-    <body>
+    <div class="content">
       <%= yield %>
-    </body>
+    </div>
     <footer>
       <div class="footer-container"></div>
     </footer>
-  </main>
+  </body>
+
   
 </html>

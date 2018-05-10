@@ -2,11 +2,13 @@
 
 <h1>Deals</h1>
 
-<%= form_with scope: :deals, method: :get, local: true do |f| %>
-  <%= f.label :filter_by_keyword  %>
-  <%= f.text_field :search  %>
-  <%= f.submit :filter  %>
-<% end %>
+<div class="filterbar">
+  <%= form_with scope: :deals, method: :get, local: true do |f| %>
+    <%= f.label :filter_by_keyword  %>
+    <%= f.text_field :search  %>
+    <%= f.submit :filter  %>
+  <% end %>
+</div>
 
 <table>
   <thead>
@@ -19,16 +21,21 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @deals.each do |deal| %>
-      <tr>
-        <td><%= image_tag deal.image_url(:thumb) unless deal.image.blank?%></td>
-        <td><%= deal.title %></td>
-        <td><%= deal.merchant.full_address %></td>
-        <td><%= deal.original_price %></td>
-        <td><%= deal.offer_price %></td>
-        <td><%= link_to 'VIEW', deal %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<% @deals.each do |deal| %>
+  <div class= "container">
+    <div class="deals-index-images">
+      <div class="image">
+      <%= image_tag deal.image_url(:thumb) unless deal.image.blank? %>
+      </div>
+   
+      <div class="title"><%= deal.title %></div>
+      <div class="address"><%= deal.merchant.full_address %></div>
+      <div class="original-price"><%= deal.original_price %></div>
+      <div class="offer-price"><%= deal.offer_price %></div>
+      <div class="view"><%= link_to 'VIEW', deal %></div>
+
+    </div>
+  </div>
+<% end %>
+

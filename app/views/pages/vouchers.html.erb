@@ -5,7 +5,6 @@
 <% @vouchers.each do |voucher| %>
 
     <li>
-    <%= voucher.id %>
     <%= voucher.title %>
     <%= link_to 'Details', deal_path(voucher) %>
     </li>
@@ -18,7 +17,6 @@
 <% @expired_vouchers.each do |voucher| %>
 
     <li>
-    <%= voucher.id %>
     <%= voucher.title %>
     <%= link_to 'Details', deal_path(voucher) %>
     </li>

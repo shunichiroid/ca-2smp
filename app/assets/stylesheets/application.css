@@ -13,26 +13,28 @@
  *= require_tree .
  *= require_self
  */
-* {
-    padding: 0;
+html, body {
     margin: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: auto;
+    font-family: 'Days One', sans-serif;
 }
  
 .header {
-    overflow: hidden;
     background-color: #DA904B;
 }
 
-.header .logo {
-
-}
 
 .header nav {
     /* float: left; */
     width: 100%;
-    display: flex;
     color: #F5CD73;
-    text-align: center;
     padding: 12px;
     text-decoration: none;
     font-size: 18px; 
@@ -42,16 +44,21 @@
 
 .header-right {
     /* float: right; */
+    /* justify-content: flex-end; */
     align-self: flex-end;
 }
+
+.content {
+    flex-wrap: wrap;
+    background-color: #F5CD73;
+    flex: 1;
+}
+
     
 .footer-container {
-    align-self: flex-end;
+    /*align-self: flex-end;*/
+    margin: auto auto 0 auto;
     height: 42px;
     width: 100%;
     background-color: #DA904B;
-}
-    
-body {
-    background-color: #F5CD73;
 }

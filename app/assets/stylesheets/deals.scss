@@ -1,3 +1,63 @@
-// Place all the styles related to the Deals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the Deals controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .filter_bar {
+//     align-items: center;
+// }
+
+.container {
+    width: 300px;
+    height: 200px;
+}
+
+// .deals-index-images {
+//     grid-column-start: 1;
+//     grid-column-end: 4;
+//     grid-row-start: 1;
+//     grid-row-end: 2;
+// }
+
+// .title {
+//     grid-column-start: 1;
+//     grid-column-end: 4;
+//     grid-row-start: 3;
+//     grid-row-end: 4;
+// }
+
+// .address {
+//     grid-column-start: 1;
+//     grid-column-end: 4;
+//     grid-row-start: 4;
+//     grid-row-end: 5;
+// }
+
+
+// .original-price {
+//     grid-column-start: 3;
+//     grid-column-end: 4;
+//     grid-row-start: 3;
+//     grid-row-end: 4;
+// }
+
+// .offer-price {
+//     grid-column-start: 3;
+//     grid-column-end: 4;
+//     grid-row-start: 4;
+//     grid-row-end: 5;
+// }
+
+// .view {
+//     grid-column-start: 4;
+//     grid-column-end: 5;
+//     grid-row-start: 2;
+//     grid-row-end: 4;
+// }
+
+.image {
+  object-fit: cover;
+  max-width: 200px;
+  max-height: 200px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+}

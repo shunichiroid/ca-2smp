@@ -5,35 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Name</th>
-      <th>Description</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Postcode</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Website url</th>
-      <th>Facebook</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @merchants.each do |merchant| %>
       <tr>
-        <td><%= merchant.user_id %></td>
+      
         <td><%= merchant.name %></td>
-        <td><%= merchant.description %></td>
-        <td><%= merchant.street %></td>
-        <td><%= merchant.city %></td>
-        <td><%= merchant.state %></td>
-        <td><%= merchant.postcode %></td>
-        <td><%= merchant.latitude %></td>
-        <td><%= merchant.longitude %></td>
-        <td><%= merchant.website_url %></td>
-        <td><%= merchant.facebook_id %></td>
         <td><%= link_to 'Show', merchant %></td>
         <td><%= link_to 'Edit', edit_merchant_path(merchant) %></td>
         <td><%= link_to 'Delete', merchant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
